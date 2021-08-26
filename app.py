@@ -1,9 +1,9 @@
 import streamlit as st
-import pickle
+import joblib
 import numpy as np
 
 # Loading the saved Model
-model = pickle.load(open("randomforest_model.pkl", "rb"))
+model = joblib.load('randomforest_model.pkl')
 
 
 def predict_default(features):
