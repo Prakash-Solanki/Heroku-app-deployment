@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 
 # Loading the saved Model
-model1 = open("fianL_rf.pkl", "rb")
+model1 = open("final_rf.pkl", "rb")
 model = joblib.load(model1)
 
 
