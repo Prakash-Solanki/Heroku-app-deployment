@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 
 # Loading the saved Model
-model = joblib.load('randomforest_model.pkl')
+model = joblib.load('final_rf.pkl')
 
 
 def predict_default(features):
