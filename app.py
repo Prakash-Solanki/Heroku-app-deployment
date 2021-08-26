@@ -3,7 +3,7 @@ import joblib
 import numpy as np
 
 # Loading the saved Model
-model = joblib.load('final_rf.pkl')
+model = joblib.load('final_rf.pkl', 'rb')
 
 
 def predict_default(features):
