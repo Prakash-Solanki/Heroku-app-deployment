@@ -26,11 +26,11 @@ def main():
 
     loan_amnt = st.text_input("Loan Amount(USD Dollar)")
 
-    term  = ["36", "60"] 
+    terms  = ["36", "60"] 
 
-    Term = term.index(st.selectbox(
+    term = terms.index(st.selectbox(
         "Select term",
-        tuple(term)
+        tuple(terms)
     ))+1
 
     int_rate = st.text_input("Interest Rate")
@@ -69,13 +69,11 @@ def main():
 
     if st.button("Predict"):
 
-        features = [loan_amnt, Term, int_rate, employment_length, annual_income, purpose, dti, delinq2yr,
-                    credit_score_low, open_acc, pub_rec, revol_bal,
-                    revol_util, total_acc, tot_cur_bal, mortage_acc]
+        features = [loan_amnt, term, int_rate, employment_length, annual_income, purpose, dti, delinq2yr, credit_score_low, open_acc, pub_rec, revol_bal, revol_util, total_acc, tot_cur_bal, mortage_acc]
         prediction, probability = predict_default(features)
         # print(prediction)
         # print(probability[:,1][0])
-        if prediction[0] == 0:
+        if prediction[0] == 1:
             # counselling_html = """
             #     <div style = "background-color: #f8d7da; font-weight:bold;padding:10px;border-radius:7px;">
             #         <p style = 'color: #721c24;'>This account will be defaulted with a probability of {round(np.max(probability)*100, 2))}%.</p>
